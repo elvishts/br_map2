@@ -1,0 +1,171 @@
+.tooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 300px;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #9abcfa;
+    order: 2;
+
+    @media screen and (min-width: 1280px) { 
+        order: 1;
+    }
+
+    &_header {
+        display: flex;
+        background: #466db5;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            line-height: 1;
+            font-weight: 500;
+            color: #fff;
+            background: #3260b5;
+            height: 30px;
+            padding: 0 15px;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1;            
+            padding: 0 15px;
+        }
+    }
+
+    &_content {
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        &.active {
+            display: flex;
+        }
+    }
+}
+
+.meteo {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    &[data-show="true"] {
+        display: flex;
+    }
+}
+
+.m_item {
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+
+    &.active {
+        display: flex;
+    }
+
+    .mi_header {
+        display: flex;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 10px;
+
+        .mih_hour {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .mih_temperature {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+    }
+
+    .mi_info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 20px;
+
+        p {
+        font-size: 1rem;
+        font-weight: 400;
+
+            span{
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .mi_btn {
+        display: flex;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+        user-select: none;
+
+        .mib {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 30px;
+            min-height: 30px;
+            border-radius: 0;
+            font-size: 14px;
+            padding: 0 12px;
+            font-weight: 500;
+            line-height: 1;
+            font-family: 'Montserrat', sans-serif;
+            appearance: none;      
+            background: linear-gradient(180deg, #3260b5 0%, #3260b5 50%, #5179c3 100%);
+            background-size: 100% 200%;
+            background-position-y: top;
+            color: #fff;
+            border: none;
+            outline: none;
+
+            &:hover {
+                background-position-y: bottom;
+                color: #fff;
+                outline-color: transparent;
+            }
+
+            &:focus,
+            &:focus-visible,
+            &:active,
+            &:visited {
+                outline: none;
+                border: none;
+            }
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+}
+  

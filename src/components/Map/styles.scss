@@ -1,0 +1,52 @@
+@mixin transition-duration($duration...) {
+    transition-duration: $duration;
+  }
+  
+  @mixin transition-timing-function($timing...) {
+    transition-timing-function: $timing;
+  }
+  
+  @mixin anima {
+    @include transition-timing-function(linear);
+    @include transition-duration(0.2s);
+  }
+  
+  #svg-map {
+    width: auto;
+    height: 90vw;
+    margin-bottom: 5rem;
+    order: 1;
+    @media screen and (min-width: 1280px) { 
+      order: 2;
+      margin-bottom: 0;
+      height: 80vh;
+    }
+    
+    .estado {
+      cursor: pointer;
+      position: relative;
+      stroke-width: 1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      font-family: sans-serif;
+      fill: #3360b4; 
+      path {        
+        stroke: #689bfb;         
+        @include anima;
+      }
+      
+      &:hover, &.active {
+        path {
+          fill: #689bfb;
+          stroke-width: 1;
+          stroke: #689bfb; 
+        }         
+      }
+      
+      .circle, text {
+        display: none;
+      }
+    }
+  }
+  
+  
